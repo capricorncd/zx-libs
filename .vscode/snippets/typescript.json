@@ -1,0 +1,36 @@
+{
+  "file header": {
+    "prefix": "hd",
+    "body": [
+      "/**",
+      " * Created by Capricorncd.",
+      " * https://github.com/capricorncd",
+      " */",
+      "$1",
+      ""
+    ],
+    "description": "Insert some information in the file header"
+  },
+  "vite": {
+    "prefix": "vite",
+    "body": [
+      "import { defineConfig } from 'vite'",
+      "",
+      "export default defineConfig({",
+      "  base: './',",
+      "  build: {",
+      "    outDir: './dist',",
+      "    rollupOptions: {",
+      "      external: [],",
+      "    },",
+      "    lib: {",
+      "      entry: 'src/index.ts',",
+      "      name: '${TM_DIRECTORY/.+\\/(.+)$/$1/i}',",
+      "      fileName: (format: string) => `index.\\${format}.js`,",
+      "    },",
+      "  }",
+      "})"
+    ],
+    "description": "Generate Vite basic configuration"
+  }
+}

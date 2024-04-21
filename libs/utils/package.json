@@ -1,0 +1,48 @@
+{
+  "name": "@zx-libs/utils",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build --emptyOutDir",
+    "docs": "node scripts/docs.mjs",
+    "pl": "npm run build && npm run docs && npm publish",
+    "eslint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "test": "vitest"
+  },
+  "keywords": [
+    "@zx-libs/utils",
+    "libs",
+    "utils",
+    "libs/utils",
+    "front-end"
+  ],
+  "files": [
+    "./dist",
+    "./src",
+    "./README.md",
+    "./package.json"
+  ],
+  "workspaces": [],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,ts,tsx}": "eslint --fix"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/zx-libs/libs/utils#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT"
+}

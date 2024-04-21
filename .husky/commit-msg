@@ -1,0 +1,13 @@
+#!/bin/sh
+# Give commit-msg execution permissions
+# chmod +x .husky/commit-msg
+. "$(dirname "$0")/_/husky.sh"
+
+# 获取项目路径
+DIR=`pwd`
+
+# 把标准输入重新改回终端
+exec < /dev/tty
+
+# 执行提交前的处理脚本
+GIT_PARAMS="$DIR/$1" node scripts/git-commit.mjs
