@@ -1,10 +1,9 @@
 {
   "name": "zx-libs",
   "version": "0.0.0",
-  "description": "usePropStyles in vue or react",
+  "description": "Some method libraries for JavaScript development",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx --fix",
     "prepare": "husky"
   },

@@ -1,2 +1,5 @@
 # zx-libs
-some static method library
+
+Some method libraries for JavaScript development
+
+@zx-libs/utils
