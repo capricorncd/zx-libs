@@ -1,6 +1,6 @@
 {
   "name": "@zx-libs/header",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Add some lines to the file header",
   "type": "module",
   "main": "index.mjs",

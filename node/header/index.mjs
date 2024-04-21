@@ -12,7 +12,13 @@ import { parseArgs } from './utils.mjs'
 
 const args = parseArgs(process.argv.slice(2))
 
+function getPackageJson() {
+  const pkgRawData = fs.readFileSync(path.join(process.cwd(), 'package.json'))
+  return JSON.parse(pkgRawData)
+}
+
 function getDefHeaderLines(pkg) {
+  pkg = pkg || getPackageJson()
   return [
     '/*!',
     ` * ${pkg.name} version ${pkg.version}`,
@@ -23,11 +29,8 @@ function getDefHeaderLines(pkg) {
   ]
 }
 
-function addHeader(file, headerLines) {
+function addHeader(file, prependLines) {
   const liens = fs.readFileSync(file, 'utf8').toString().split(EOL)
-  const prependLines = Array.isArray(headerLines)
-    ? headerLines
-    : getDefHeaderLines(headerLines)
   fs.writeFileSync(file, [...prependLines, ...liens].join(EOL))
 }
 
@@ -42,12 +45,16 @@ export function header(dir, headerLines) {
     throw new Error(`Directory or file ${dir} does not exist。`)
   }
 
+  let prependLines = Array.isArray(headerLines)
+    ? headerLines
+    : getDefHeaderLines(headerLines)
+
   const stat = fs.statSync(dir)
   if (stat.isFile()) {
-    addHeader(dir, headerLines)
-  } else {
+    addHeader(dir, prependLines)
+  } else if (stat.isDirectory()) {
     fs.readdirSync(dir).forEach((file) => {
-      addHeader(path.join(dir, file), headerLines)
+      header(path.join(dir, file), prependLines)
     })
   }
 }
@@ -65,7 +72,6 @@ if (args.dir) {
     }
     header(dir, fs.readFileSync(prependFile).toString().split(EOL))
   } else {
-    const pkgRawData = fs.readFileSync(path.join(cwd, 'package.json'))
-    header(dir, JSON.parse(pkgRawData))
+    header(dir)
   }
 }
