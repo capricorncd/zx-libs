@@ -1,0 +1,34 @@
+{
+  "name": "@zx-libs/header",
+  "version": "0.0.1",
+  "description": "Add some lines to the file header",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "pl": "npm publish",
+    "test": "vitest"
+  },
+  "keywords": [
+    "@zx-libs/header",
+    "node",
+    "header",
+    "node/header",
+    "front-end"
+  ],
+  "files": [
+    "*"
+  ],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,ts,tsx}": "eslint --fix"
+  },
+  "dependencies": {
+    "@zx-libs/utils": "*"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/zx-libs/node/header#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT"
+}
