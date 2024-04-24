@@ -13,7 +13,6 @@
     "node/*"
   ],
   "dependencies": {
-    "zx-sml": "^0.9.3"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.6",

@@ -7,7 +7,7 @@ import fs from 'node:fs'
 import { EOL } from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
-import { outputFile } from 'zx-sml/docgen'
+import { outputFile } from '@zx-libs/docgen'
 
 const METHOD_START = '<!--METHOD_START-->'
 const METHOD_END = '<!--METHOD_END-->'
@@ -52,7 +52,6 @@ const getCommentsDataOptions = {
 }
 
 function main() {
-  // zx-sml default docs
   const srcDir = resolve('./src')
   const { lines } = outputFile(srcDir, getCommentsDataOptions)
   // README.md

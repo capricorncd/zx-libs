@@ -1,0 +1,47 @@
+{
+  "name": "@zx-libs/docgen",
+  "version": "0.0.1",
+  "description": "Some tool functions used in the Nodejs environment, It is mainly used to obtain the comment information in the code, and then output it as a Markdown file.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./src/types.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build --emptyOutDir && node ../../node/header --dir=dist",
+    "docs": "node scripts/docs.mjs",
+    "pl": "npm run build && npm run docs && npm publish --access public",
+    "eslint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "test": "vitest"
+  },
+  "keywords": [
+    "@zx-libs/docgen",
+    "node",
+    "docgen",
+    "node/docgen",
+    "front-end"
+  ],
+  "files": [
+    "./dist",
+    "./README.md",
+    "./package.json"
+  ],
+  "workspaces": [],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,ts,tsx}": "eslint --fix"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/zx-libs/node/docgen#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT"
+}

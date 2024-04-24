@@ -1,0 +1,38 @@
+/**
+ * @document X
+ *
+ * XXXX
+ *
+ * description 1111
+ *
+ * @code Usage
+ *
+ * ```bash
+ *   const x = new X();
+ * ```
+ * description 2222
+ */
+
+/**
+  * @property el
+  * Use `el` to get the HTML element of the current class
+  * property 3333
+  * ```ts
+  * x.el
+  * ```
+  * last line text
+ */
+
+/**
+ * @method fun<T extends Object>(props)
+ * generic method
+ * @param props `T` properties
+ */
+
+ /**
+ * @method fun2(props)
+ * generic method2
+ * @generic T extends Object
+ * @param props `T` properties
+ */
+
