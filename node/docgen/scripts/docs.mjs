@@ -94,8 +94,7 @@ const outputFileOptions = {
 
 function main() {
   const input = resolve('src')
-  const { lines } = outputFile(input, resolve('./README.md'), outputFileOptions)
-  console.log(lines)
+  outputFile(input, resolve('./README.md'), outputFileOptions)
 }
 
 main()

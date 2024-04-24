@@ -561,8 +561,8 @@ type of getStyleValue return
 type GetStyleValueReturnType<T, N> = T extends undefined
   ? CSSStyleDeclaration
   : N extends true
-  ? number
-  : string
+    ? number
+    : string
 ```
 
 </details>

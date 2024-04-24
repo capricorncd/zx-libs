@@ -525,7 +525,6 @@ export function toTableLines(data: ToTableLinesParamData) {
 // fun<T extends Object>(props) => { fullName: string, generics: string[] }
 export function splitFullNameRaw(input: string) {
   const result = input.match(/^(\w+)<(\w(?:.+\w)?)>([^<>]+)/)
-  console.log(result)
   if (result) {
     // TODO: 多泛型处理
     return { fullName: result[1] + result[3], generics: [result[2]] }
