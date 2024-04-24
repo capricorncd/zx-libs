@@ -5,6 +5,9 @@
  */
 import { isNumberLike } from './check'
 
+const REG_TARGET_CSS_VALUE = /^((-?\d+(\.\d+)?)?([a-z]+|%)?\s*)+$/i
+const REG_NUMBER_AND_SPACE = /(\d+\s|\s\d+$)/
+
 /**
  * @method toCssValue(value, unit)
  * ```js
@@ -21,8 +24,7 @@ export function toCssValue(value: unknown, unit = 'px'): string {
   if (value && typeof value === 'string') {
     // Remove extra spaces, ` 8   8  ` => `8 8`
     const str = value.trim().replace(/\s{2,}/g, ' ')
-    return /^(-?\d+(\.\d+)?([a-z]+|%)?\s*)+$/i.test(str) &&
-      /(\d+\s|\s\d+$)/.test(str)
+    return REG_TARGET_CSS_VALUE.test(str) && REG_NUMBER_AND_SPACE.test(str)
       ? str
           .trim()
           .split(' ')
