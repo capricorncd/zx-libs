@@ -19,6 +19,8 @@ describe('check', () => {
     expect(isArray(null)).toBeFalsy()
     expect(isArray(new Map())).toBeFalsy()
     expect(isArray(new Set())).toBeFalsy()
+    expect(isArray({ length: 0 })).toBeFalsy()
+
     expect(isArray([])).toBeTruthy()
     expect(isArray([1, 2])).toBeTruthy()
     expect(isArray(['str', 2])).toBeTruthy()
@@ -30,9 +32,12 @@ describe('check', () => {
     expect(isObject(null)).toBeFalsy()
     expect(isObject(undefined)).toBeFalsy()
     expect(isObject('undefined')).toBeFalsy()
+    expect(isObject(Symbol('undefined'))).toBeFalsy()
+
     expect(isObject({})).toBeTruthy()
     expect(isObject(new Map())).toBeTruthy()
     expect(isObject(new Set())).toBeTruthy()
+    expect(isObject(new Date())).toBeTruthy()
   })
 
   it('isNumberLike', () => {
