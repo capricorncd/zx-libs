@@ -6,7 +6,7 @@
 import { isNumberLike } from './check'
 
 const REG_TARGET_CSS_VALUE = /^((-?\d+(\.\d+)?)?([a-z]+|%)?\s*)+$/i
-const REG_NUMBER_AND_SPACE = /(\d+\s|\s\d+$)/
+const REG_NUMBER_AND_SPACE = /(\d+\s|\s-?\d+(\.\d+)?$)/
 
 /**
  * @method toCssValue(value, unit)

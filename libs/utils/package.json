@@ -1,6 +1,6 @@
 {
   "name": "@zx-libs/utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Some static method library.",
   "type": "module",
   "main": "dist/index.umd.js",
