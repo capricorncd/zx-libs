@@ -172,7 +172,7 @@ export interface OutputFileOptionAlias {
   sourceCodeSummary?: string
   // Required values
   requiredValues?: OutputFileOptionAliasRequiredValues
-  // Alias of the DocTypes name.
+  // Alias of the DocTypes name. `types: { method: '方法/函数' }`
   types?: Record<string, string>
 }
 

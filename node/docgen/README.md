@@ -457,7 +457,7 @@ Prop|Types|Required|Description
 tableHead|`Record<string, string>`|no|Alias of table head th inner text.
 sourceCodeSummary|`string`|no|Summary of details, `<details><summary>Source Code</summary></details>`'s summary, default `Source Code`.
 requiredValues|`OutputFileOptionAliasRequiredValues`|no|Required values
-types|`Record<string, string>`|no|Alias of the DocTypes name.
+types|`Record<string, string>`|no|Alias of the DocTypes name. `types: { method: '方法/函数' }`
 
 <details>
 <summary>Source Code</summary>
@@ -470,7 +470,7 @@ interface OutputFileOptionAlias {
   sourceCodeSummary?: string
   // Required values
   requiredValues?: OutputFileOptionAliasRequiredValues
-  // Alias of the DocTypes name.
+  // Alias of the DocTypes name. `types: { method: '方法/函数' }`
   types?: Record<string, string>
 }
 ```

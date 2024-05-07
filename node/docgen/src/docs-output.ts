@@ -91,6 +91,9 @@ function createTypesDoc(
   options: OutputFileOptions = {}
 ) {
   lines.push(`### ${item.fullName}`, BLANK_LINE, ...item.desc, BLANK_LINE)
+
+  const hasCodes = item.codes.length > 0
+
   // table
   const typeTable = createPropsTable(
     item.props as CommentInfoItemProp[],
@@ -99,19 +102,22 @@ function createTypesDoc(
     options
   )
   // codes
-  const codes = ['```ts', ...item.codes, '```', BLANK_LINE]
+  const codes = hasCodes ? ['```ts', ...item.codes, '```', BLANK_LINE] : []
   // source code alias
   const sourceCodeSummary = options.alias?.sourceCodeSummary
 
-  const details = [
-    '<details>',
-    `<summary>${sourceCodeSummary || 'Source Code'}</summary>`,
-    BLANK_LINE,
-    ...codes,
-    BLANK_LINE,
-    '</details>',
-    BLANK_LINE,
-  ]
+  // 没有codes时，不生成<details>
+  const details = hasCodes
+    ? [
+        '<details>',
+        `<summary>${sourceCodeSummary || 'Source Code'}</summary>`,
+        BLANK_LINE,
+        ...codes,
+        BLANK_LINE,
+        '</details>',
+        BLANK_LINE,
+      ]
+    : []
 
   const { typeWithSourceCode, typeWithTable, typeWithAuto } = options
 
@@ -441,7 +447,8 @@ export function outputFile(
     // file or directory's path
     typeof input === 'string' ||
     // or an array of paths
-    (isValidArray(input) &&
+    (Array.isArray(input) &&
+      input.length > 0 &&
       (input as string[]).every((str) => typeof str === 'string'))
   ) {
     input = getCommentsData(input as string | string[], true, options)
