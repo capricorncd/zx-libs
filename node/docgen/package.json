@@ -1,6 +1,6 @@
 {
   "name": "@zx-libs/docgen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Some tool functions used in the Nodejs environment, It is mainly used to obtain the comment information in the code, and then output it as a Markdown file.",
   "type": "module",
   "main": "dist/index.umd.js",

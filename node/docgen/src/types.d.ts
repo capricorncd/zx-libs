@@ -242,7 +242,7 @@ export function error(...args: Array<any>): void
  * Parameter `options` of function [getCommentsData](#getcommentsdatainput-needarray-options)
  */
 export interface GetCommentsDataOptions {
-  // Regular expression for the type of file to be read, defaults to `/\.[tj]s$/`.
+  // Regular expression for the type of file to be read, defaults to `/\.[mc]?[tj]sx?$/`.
   fileType?: RegExp
   // Disables key sorting, defaults to `false`, and sorts alphabetically.
   disableKeySorting?: boolean

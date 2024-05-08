@@ -406,7 +406,7 @@ Parameter `options` of function [getCommentsData](#getcommentsdatainput-needarra
 
 Prop|Types|Required|Description
 :--|:--|:--:|:--
-fileType|`RegExp`|no|Regular expression for the type of file to be read, defaults to `/\.[tj]s$/`.
+fileType|`RegExp`|no|Regular expression for the type of file to be read, defaults to `/\.[mc]?[tj]sx?$/`.
 disableKeySorting|`boolean`|no|Disables key sorting, defaults to `false`, and sorts alphabetically.
 types|`CommentInfoItem[]`|no|This `types` array is obtained from other files or directories for `extends` related processing.
 expendTypes|`string[]`|no|expend types of getCommentsData function.
@@ -419,7 +419,7 @@ isExtractCodeFromComments|`boolean`|no|If true, the code in the comment will be 
 
 ```ts
 interface GetCommentsDataOptions {
-  // Regular expression for the type of file to be read, defaults to `/\.[tj]s$/`.
+  // Regular expression for the type of file to be read, defaults to `/\.[mc]?[tj]sx?$/`.
   fileType?: RegExp
   // Disables key sorting, defaults to `false`, and sorts alphabetically.
   disableKeySorting?: boolean
@@ -545,7 +545,7 @@ Options of the function [outputFile](#outputfileinput-outputdirorfile-options), 
 
 Prop|Types|Required|Description
 :--|:--|:--:|:--
-fileType|`RegExp`|no|Regular expression for the type of file to be read, defaults to `/\.[tj]s$/`.
+fileType|`RegExp`|no|Regular expression for the type of file to be read, defaults to `/\.[mc]?[tj]sx?$/`.
 disableKeySorting|`boolean`|no|Disables key sorting, defaults to `false`, and sorts alphabetically.
 types|`CommentInfoItem[]`|no|This `types` array is obtained from other files or directories for `extends` related processing.
 expendTypes|`string[]`|no|expend types of getCommentsData function.

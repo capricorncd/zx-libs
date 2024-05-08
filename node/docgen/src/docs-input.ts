@@ -324,7 +324,7 @@ function _getCommentsData(
   data: Record<string, Record<string, CommentInfoItem>>,
   options: GetCommentsDataOptions
 ) {
-  const { fileType = /\.(ts|js)$/ } = options
+  const { fileType = /\.[mc]?[tj]sx?$/ } = options
 
   if (Array.isArray(input)) {
     input.forEach((str) => {
