@@ -1,6 +1,6 @@
 {
   "name": "@zx-libs/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Some static method library.",
   "type": "module",
   "main": "dist/index.umd.js",
@@ -37,7 +37,7 @@
     "*.{js,ts,cjs,mjs,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
-    "date-utils-2020": "^1.1.1"
+    "date-utils-2020": "^1.1.2"
   },
   "engines": {
     "node": ">=20.0.0",
