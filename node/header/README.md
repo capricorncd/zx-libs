@@ -34,7 +34,10 @@ header('./dist', [
 ## Use in command line
 
 ```bash
-node node/header --dir=dist --prepend-file=prepend-file.txt
+# all files in the dist folder
+node node_modules/@zx-libs/header --dir=dist
+# one file prepend-file.txt
+node node_modules/@zx-libs/header --dir=dist --prepend-file=prepend-file.txt
 ```
 
 prepend-file.txt
