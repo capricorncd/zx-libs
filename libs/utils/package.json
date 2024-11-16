@@ -1,6 +1,6 @@
 {
   "name": "@zx-libs/utils",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Some static method library.",
   "type": "module",
   "main": "dist/index.umd.js",
@@ -43,7 +43,7 @@
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
   },
-  "homepage": "https://github.com/capricorncd/zx-libs/libs/utils#readme",
+  "homepage": "https://github.com/capricorncd/zx-libs/tree/main/libs/utils#readme",
   "author": "Capricorncd<capricorncd@qq.com>",
   "license": "MIT"
 }
